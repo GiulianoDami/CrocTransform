@@ -1,0 +1,37 @@
+{
+    "language": "Go",
+    "dependency_file": "go.mod",
+    "dependencies": [],
+    "files": [
+        {
+            "path": "main.go",
+            "description": "Entry point and command-line interface",
+            "exports": ["func main()"]
+        },
+        {
+            "path": "internal/processor/processor.go",
+            "description": "Core analysis logic for fossil data",
+            "exports": ["type FossilData struct", "func AnalyzeFossil(data FossilData) AnalysisResult"]
+        },
+        {
+            "path": "internal/models/models.go",
+            "description": "Data models for fossil and analysis results",
+            "exports": ["type FossilData struct", "type AnalysisResult struct"]
+        },
+        {
+            "path": "internal/cli/cli.go",
+            "description": "Command-line argument parsing and execution",
+            "exports": ["func Execute() error"]
+        },
+        {
+            "path": "internal/visualizer/visualizer.go",
+            "description": "Visualization generation for locomotion patterns",
+            "exports": ["func GeneratePlot(data FossilData, outputPath string) error"]
+        },
+        {
+            "path": "internal/batch/batch.go",
+            "description": "Batch processing of multiple fossil specimens",
+            "exports": ["func ProcessBatch(inputDir, outputCSV string) error"]
+        }
+    ]
+}
